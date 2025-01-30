@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+main {
+    flex: 1; 
+    margin-bottom: 5px;
+}
+header img {
+    border-radius: 50%;
+}
+h2 {
+    color: #c00;
+}
+.menu-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 8px;
+}
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: index 1000;
+    padding: 1rem;
+}
+.Horario {
+    font-size: 0.9rem; 
+}
+.btn-whatsapp {
+    font-size: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 24%;
+    margin-right: 24%;
+}
+.btn-whatsapp img {
+    margin-right: 8px;
+    width: 24px; 
+}
