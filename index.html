@@ -3,12 +3,33 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Donde El Mocho - Carta de Comidas Rápidas</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="Donde el Mocho"> 
+        <meta http-equiv="refresh" content="10">
+
         <link rel="stylesheet" href="styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        
+        <link rel="icon" type="image/png" sizes="192x192" href="./imagenes/logo-app.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="./imagenes/logo-app.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="./imagenes/logo-app.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="./imagenes/logo-app.png">
+        <link rel="manifest" href="manifest.json">
+        <title> Donde El Mocho </title>
     
     </head>
     <body>
+
+        <button id="installBtn" class="btn btn-success" style="display: none;">Instalar App</button>
+
+        <div id="ios-instructions" style="display: none; text-align: center; background: #ffeb3b; padding: 10px; border-radius: 5px;">
+          📱 Para instalar esta app en iPhone:<br>
+          1️⃣ Toca <strong>Compartir</strong> (📤).<br>
+          2️⃣ Selecciona <strong>"Agregar a inicio"</strong>.
+          3️⃣ Listo <strong>"Así de fácil te llevas nustro Menú"</strong>.
+        </div>
         
         <header class="bg-danger text-white text-center py-4">
             <div class="container">
@@ -75,5 +96,8 @@
                 <br>Emil Jiménez - Desarrollador Web <a href="https://wa.me/+573192364724?text=Hola,%20quiero%20mi%20propio%20menú%20digital." class="btn btn-success" target="_blank">Contáctame</a>
             </p>
         </footer>
+
+        <script src="script.js"></script>
+
     </body>
 </html>

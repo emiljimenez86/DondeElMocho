@@ -1,0 +1,21 @@
+{
+    "name": "Donde el Mocho",
+    "short_name": "Donde el Mocho",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#022407",
+    "icons": [
+      {
+        "src": "./imagenes/logo-app.png",
+        "sizes": "192x192",
+        "type": "imagenes/png"
+      },
+      {
+        "src": "./imagenes/logo-app.png",
+        "sizes": "512x512",
+        "type": "imagenes/png"
+      }
+    ]
+  }
+  
