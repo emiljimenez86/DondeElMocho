@@ -12,9 +12,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Verificar si el Service Worker está disponible y registrarlo
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
-        .then(() => console.log("Service Worker registrado"))
+    navigator.serviceWorker.register('./sw.js')
+        .then((registration) => {
+            console.log("Service Worker registrado");
+            
+            // Detectar actualizaciones del Service Worker
+            registration.addEventListener('updatefound', () => {
+                const newWorker = registration.installing;
+                console.log("Nueva versión del Service Worker detectada");
+                
+                newWorker.addEventListener('statechange', () => {
+                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                        // Hay una nueva versión disponible
+                        console.log("Nueva versión disponible. Recargando...");
+                        // Recargar automáticamente después de un breve delay
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 1000);
+                    }
+                });
+            });
+            
+            // Verificar actualizaciones periódicamente
+            setInterval(() => {
+                registration.update();
+            }, 60000); // Cada minuto
+        })
         .catch(error => console.log("Error registrando SW:", error));
+    
+    // Escuchar cuando el Service Worker toma control
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+        console.log("Service Worker tomó control. Recargando...");
+        window.location.reload();
+    });
 }
 
 // Variables de instalación
@@ -79,13 +109,4 @@ if (isIOS()) {
         installBtn.style.display = "none";
         iosInstructions.style.display = "none";
     });
-}
-
-function checkInstallationStatus() {
-    setTimeout(() => {
-        if (isAppInstalled()) {
-            installBtn.style.display = "none";
-            iosInstructions.style.display = "none";
-        }
-    }, 500); // Se retrasa medio segundo para no interferir con la carga del icono
 }
